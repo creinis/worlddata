@@ -2,32 +2,42 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  background-color: #000;
 }
 
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+.blue-gradient {
+  background: linear-gradient(92deg, #0dae2a 2.87%, #0cad2f 96.18%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+:root {
+  color-scheme: dark;
+}
+
+img {
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero-header  {
+  @apply sm:p-16 py-16 px-8 flex justify-center items-center flex-col /* bg-gradient-to-b from-gray-800 to-gray-900 */ text-white relative
+}
+
+.hero-text {
+  @apply sm:text-6xl text-5xl font-bold leading-[120%] text-center
+}
+
+.bg-container {
+  @apply absolute top-0 left-0 w-full h-full min-h-lvh opacity-50
+}
+
+.bg-container-image {
+  @apply bg-cover bg-center w-full h-full absolute min-h-lvh
+}
+
+.text-paragraph {
+  @apply text-neutral-200 font-thin text-lg pt-4
 }
